@@ -1,5 +1,5 @@
 ## Getting started
 
 ```bash
-uv sync
+uv sync --all-extras --dev
 ```
