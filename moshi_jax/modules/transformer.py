@@ -185,7 +185,7 @@ class TransformerLayer(nnx.Module):
 
 
 class Transformer(nnx.Module):
-    def __init__(self, config: ml_collections.ConfigDict):
+    def __init__(self, config: ml_collections.ConfigDict, rngs: nnx.Rngs):
         self.config = config
         self.layers = [
             TransformerLayer(
@@ -199,7 +199,7 @@ class Transformer(nnx.Module):
                 bias_mlp=self.config.bias_mlp,
                 gating=self.config.gating,
                 layer_scale=self.config.layer_scale,
-                rngs=nnx.Rngs(),
+                rngs=rngs,
             )
             for _ in range(self.config.num_layers)
         ]
