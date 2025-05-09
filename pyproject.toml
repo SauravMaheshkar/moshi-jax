@@ -11,10 +11,9 @@ dependencies = [
 ]
 
 [tool.uv]
-package = true
 dev-dependencies = [
-    "flux",
     "pytest>=8.3.3",
+    "ruff>=0.11.0"
 ]
 
 [tool.uv.sources]
@@ -33,11 +32,5 @@ lines-after-imports = 2
 testpaths = ["tests"]
 filterwarnings = [
     "ignore::DeprecationWarning",
-	"ignore::UserWarning"
-]
-
-[dependency-groups]
-dev = [
-    "pytest>=8.3.5",
-    "ruff>=0.11.0",
+    "ignore::UserWarning"
 ]
